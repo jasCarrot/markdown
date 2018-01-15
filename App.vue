@@ -16,7 +16,6 @@
         },
         computed: {
             outputContent(){
-                // return this.inputContent;
                 return marked(this.inputContent,{sanitize:true});
             }
         },
