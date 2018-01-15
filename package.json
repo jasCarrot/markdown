@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "start http://localhost:2333 && webpack-dev-server --port 2333 --inline"
+    "dev": "start http://localhost:2333 && webpack-dev-server --port 2333 --inline",
+    "dev:linux": "open http://localhost:2333 && webpack-dev-server --port 2333 --inline"
   },
   "author": "hxm",
   "license": "ISC",

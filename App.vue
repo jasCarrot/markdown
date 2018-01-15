@@ -1,24 +1,23 @@
 <template>
     <div id="editor">
-        <input type="text" class="fuk" v-model="trust">
-        <div class="contect">{{ trust }}</div>
+        <input type="text" class="input" v-model="inputContent">
+        <div class="output" v-html="outputContent"/>
     </div>
 </template>
 
 <script>
-    import marked from 'marked'
-    import recmark from 'recmark.vue'
+    import marked from 'marked';
 
     export default{
-        data(){
+        data() {
             return{
-                context:'',
-                trust:''
+                inputContent:''
             }
         },
-        computed:{
-            markdownn(){
-                return marked(this.context,{sanitize:true});
+        computed: {
+            outputContent(){
+                // return this.inputContent;
+                return marked(this.inputContent,{sanitize:true});
             }
         },
     }
@@ -32,7 +31,7 @@
         color: #333;
     }
 
-    .fuk, .contect {
+    .input, .output {
         display: inline-block;
         width: 49%;
         height: 100%;
@@ -41,7 +40,7 @@
         padding: 0 20px;
     }
 
-    .fuk {
+    .input {
         border: none;
         border-right: 1px solid #ccc;
         resize: none;
